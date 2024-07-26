@@ -26,7 +26,6 @@ export function tempDirSync(prefix = ''): SyncTempDir {
   return {
     path,
     [Symbol.dispose]() {
-      console.log('dispose', path);
       rmSync(path, {recursive: true});
     },
   };
