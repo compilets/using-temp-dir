@@ -1,0 +1,26 @@
+{
+  "name": "@compilets/using-temp-dir",
+  "version": "0.0.1-dev",
+  "description": "Create a temporary directory and remove it on disposition",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepack": "tsc",
+    "pretest": "tsc --noEmit",
+    "test": "tsx --test tests/*.spec.ts"
+  },
+  "author": "zcbenz",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/compilets/using-temp-dir.git"
+  },
+  "bugs": {
+    "url": "https://github.com/compilets/using-temp-dir/issues"
+  },
+  "devDependencies": {
+    "@types/node": "20.12.8",
+    "typescript": "5.4.5",
+    "tsx": "4.16.2"
+  }
+}
