@@ -7,8 +7,8 @@ interface AsyncTempDir extends AsyncDisposable {
   path: string;
 }
 
-export async function tempDir(prefix = ''): Promise<AsyncTempDir> {
-  const path = await mkdtemp(tmpdir() + sep + prefix);
+export async function tempDir(prefix?: string): Promise<AsyncTempDir> {
+  const path = await mkdtemp(prefix ?? tmpdir() + sep);
   return {
     path,
     async [Symbol.asyncDispose]() {
@@ -21,8 +21,8 @@ interface SyncTempDir extends Disposable {
   path: string;
 }
 
-export function tempDirSync(prefix = ''): SyncTempDir {
-  const path = mkdtempSync(tmpdir() + sep + prefix);
+export function tempDirSync(prefix?: string): SyncTempDir {
+  const path = mkdtempSync(prefix ?? tmpdir() + sep);
   return {
     path,
     [Symbol.dispose]() {
